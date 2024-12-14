@@ -1,7 +1,7 @@
 import sys
 
 # Get args
-args = sys.argv[1:] # Exclude the script name
+args = sys.argv[1:]  # Exclude the script name
 # Check if there is more than one argument
 args_len = len(args)
 
