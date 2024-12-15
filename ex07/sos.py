@@ -53,12 +53,15 @@ def convert_to_morse():
     if args_len != 1:
         raise AssertionError("the arguments are bad")
 
+    # The string to convert is the first arg
     string_to_convert = args[0]
+
+    # Check if all characters are handled
     for char in string_to_convert:
         if not char.isalnum():
             raise AssertionError("the arguments are bad")
 
-    morse = get_morse()
+    morse = get_morse()  # Get the morse dictionary
     string_len = len(string_to_convert) - 1
 
     # enumerate() gives the current index and the character while iterating.
