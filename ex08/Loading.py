@@ -2,6 +2,10 @@ from sys import stdout
 from time import time
 
 
+"""
+Implementation of tqdm
+"""
+
 def get_ansi_colours() -> dict:
     """
     Returns a dictionary with all the ANSI basic colors
@@ -18,8 +22,6 @@ def get_ansi_colours() -> dict:
     }
 
 def ft_tqdm(
-    """
-    """
     iterable: any, 
     unit: str="it",
     leave: bool=True,
@@ -28,9 +30,19 @@ def ft_tqdm(
     colour: str="white"
     ) -> any:
 
+    """
+	Implementation of tqdm
+    """
+
     total_len = len(iterable)
+	# Quit if iterable is empty
+    if total_len == 0:
+        print("0it [00:00, ?it/s]")
+        return
+
     start_time = time()
 
+    # Set colours
     colour_dict = get_ansi_colours()
     ansi_colour = colour_dict[colour]
     reset_colour = "\033[0m"
@@ -38,12 +50,13 @@ def ft_tqdm(
     for i, item in enumerate(iterable, initial + 1):
         bar_len = 40
         progress = i / total_len
+        percentage = int(progress * 100)
+
+        # Create the progress bar
         filled_len = int(bar_len * progress)
         empty_len = bar_len - filled_len
-
         bar = f"{ansi_colour}█{reset_colour}" * filled_len + " " * empty_len
 
-        percentage = int(progress * 100)
         elapsed_time = time() - start_time
         minutes, seconds = divmod(int(elapsed_time), 60)
         formatted_elapsed_time = f"{minutes:02}:{seconds:02}"
