@@ -1,6 +1,15 @@
 import sys
 
 
+"""
+The program takes a string as an argument and encodes it into Morse Code.
+
+It supports space and alphanumeric characters.
+An alphanumeric character is represented by dots '.' and dashes '-'.
+Complete morse characters are separated by a single space.
+A space character is represented by a slash '/'.
+"""
+
 def get_morse() -> None:
     """Return a dictionary containing each character in the following form:
     <ascii char>: <morse equivalent>
@@ -61,14 +70,14 @@ def convert_to_morse():
         if not char.isalnum():
             raise AssertionError("the arguments are bad")
 
-    morse = get_morse()  # Get the morse dictionary
+    morse = get_morse()  # Get the Morse Code dictionary
     string_len = len(string_to_convert) - 1
 
     # enumerate() gives the current index and the character while iterating.
     for i, char in enumerate(string_to_convert):
         if (i != string_len):  # If not the last char
             print(morse[char.upper()], end="")
-        else:  # For the last char, don't print the space after the morse sign
+        else:  # For the last char, don't print the space after the Morse character
             print(morse[(char.upper())][:-1])
 
 
