@@ -33,19 +33,31 @@ def ft_tqdm(
         colour: str = "white"
         ) -> any:
     """
-    The progression bar is updated on every turn of the loop.
+        Decorate an iterable object, returning an iterator which acts exactly
+    like the original iterable, but prints a dynamically updating
+    progressbar every time a value is requested.
 
-	Return:
-        The current item of the iterator treated by the loop.	 
+    Parameters
+    ----------
+    iterable  : iterable, optional
+        Iterable to decorate with a progressbar.
+        Leave blank to manually manage the updates.
+    leave  : bool, optional
+        If [default: True], keeps all traces of the progressbar
+        upon termination of iteration.
+        If `None`, will leave only if `position` is `0`.
+    unit  : str, optional
+        String that will be used to define the unit of each iteration
+        [default: it].
+    colour  : str, optional
+        Bar colour (e.g. 'green', '#00ff00').
+    delay  : float, optional
+        Don't display until [default: 0] seconds have elapsed.
 
-		'yield' is used to turn the function into a generator.
-
-		A generator allows you to iterate over a sequence of values
-		without storing the entire sequence in memory.
-		Instead of returning all items at once, the yield statement
-		produces a value each time it is called and pauses the function's
-		execution until the next value is requested.
-    """
+    Returns
+    -------
+    out  : decorated iterator.
+"""
 
     # Get terminal size
     terminal_size = get_terminal_size()
@@ -99,7 +111,7 @@ def ft_tqdm(
         # Progression bar width: terminal width - infos around bar
         bar_len = terminal_width - 7 - len(info_time) - len(info_iteration)
 
-        # Create the progress bar
+        # Create the progressbar
         filled_len = int(bar_len * progress)
         empty_len = bar_len - filled_len
         bar = f"{ansi_colour}█{reset_colour}" * filled_len + " " * empty_len
