@@ -1,4 +1,4 @@
-import sys
+from sys import argv, stderr
 
 
 """
@@ -9,6 +9,7 @@ An alphanumeric character is represented by dots '.' and dashes '-'.
 Complete morse characters are separated by a single space.
 A space character is represented by a slash '/'.
 """
+
 
 def get_morse() -> None:
     """Return a dictionary containing each character in the following form:
@@ -56,7 +57,7 @@ def get_morse() -> None:
 
 
 def convert_to_morse():
-    args = sys.argv[1:]   # Exclude the script name
+    args = argv[1:]   # Exclude the script name
     args_len = len(args)  # Get the number of arguments
 
     if args_len != 1:
@@ -77,7 +78,7 @@ def convert_to_morse():
     for i, char in enumerate(string_to_convert):
         if (i != string_len):  # If not the last char
             print(morse[char.upper()], end="")
-        else:  # For the last char, don't print the space after the Morse character
+        else:  # Don't print the space after the last Morse character
             print(morse[(char.upper())][:-1])
 
 
@@ -85,4 +86,4 @@ if __name__ == "__main__":
     try:
         convert_to_morse()
     except Exception as e:
-        print(f"AssertionError: {e}", file=sys.stderr)
+        print(f"AssertionError: {e}", file=stderr)

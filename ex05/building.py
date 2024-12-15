@@ -1,4 +1,4 @@
-import sys
+from sys import argv, stdin
 import string
 
 
@@ -24,13 +24,13 @@ def analyze_string(input_string: str) -> None:
 
 def main():
     # Get args
-    args = sys.argv
+    args = argv
     # Get args number
     args_len = len(args)
 
     if args_len == 1:  # If no arg is found, ask for the string to count
         print("What is the text to count?")
-        string_to_count = sys.stdin.readline()
+        string_to_count = stdin.readline()
     elif args_len > 2:
         raise AssertionError("More than one argument is provided")
     else:  # Analyse the first argument

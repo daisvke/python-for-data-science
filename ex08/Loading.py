@@ -8,6 +8,7 @@ Implementation of tqdm from the tdqm package
  - Handled option: unit, leave, delay, colour
 """
 
+
 def get_ansi_colours() -> dict:
     """
     Returns a dictionary with all the ANSI basic colors
@@ -23,16 +24,27 @@ def get_ansi_colours() -> dict:
         "white": "\033[37m"
     }
 
-def ft_tqdm(
-    iterable: any, 
-    unit: str="it",
-    leave: bool=True,
-    delay: float=0.0,
-    colour: str="white"
-    ) -> any:
 
+def ft_tqdm(
+        iterable: any,
+        unit: str = "it",
+        leave: bool = True,
+        delay: float = 0.0,
+        colour: str = "white"
+        ) -> any:
     """
-	Implementation of tqdm
+    The progression bar is updated on every turn of the loop.
+
+	Return:
+        The current item of the iterator treated by the loop.	 
+
+		'yield' is used to turn the function into a generator.
+
+		A generator allows you to iterate over a sequence of values
+		without storing the entire sequence in memory.
+		Instead of returning all items at once, the yield statement
+		produces a value each time it is called and pauses the function's
+		execution until the next value is requested.
     """
 
     # Get terminal size

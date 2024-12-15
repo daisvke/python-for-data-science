@@ -1,10 +1,10 @@
-import sys
+from sys import argv, stderr
 from ft_filter import ft_filter
 
 
 def filterstring() -> None:
     """Filter the string and print the resulting list"""
-    args = sys.argv[1:]   # Exclude the script name
+    args = argv[1:]   # Exclude the script name
     args_len = len(args)  # Get the number of arguments
 
     if args_len != 2:
@@ -31,4 +31,4 @@ if __name__ == "__main__":
     try:
         filterstring()
     except Exception as e:
-        print(f"AssertionError: {e}", file=sys.stderr)
+        print(f"AssertionError: {e}", file=stderr)
