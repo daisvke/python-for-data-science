@@ -15,10 +15,19 @@ The "Training Piscine Python for Data Science" is a structured program that intr
 
 <img src="screenshots/ex06.png" />
 
-From Epictetus's <i>Enchiridion</i><br />
+(From Epictetus's <i>Enchiridion</i>)<br />
 Here, the word length filter is applied to identify which words meet a certain threshold (words with more than 4 characters), which could be useful in categorizing or processing data.
 * Exercise 07: Convert a string into Morse code, handling space and alphanumeric characters with a dictionary lookup.
+
+<img src="screenshots/ex07.png" />
+
 * Exercise 08: Recreate the tqdm progress bar functionality using Python's yield operator.
+Handled option: unit, leave, delay, colour
+
+<img src="screenshots/ex08.png" />
+
+(Comparing our tqdm to the original one)
+
 * Exercise 09: Create a Python package and make it installable via pip.
 
 ## Tools
