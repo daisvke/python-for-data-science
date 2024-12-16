@@ -5,7 +5,7 @@ from shutil import get_terminal_size
 """
 Implementation of tqdm from the tdqm package
 
- - Handled option: unit, leave, delay, colour
+ - Handled options: unit, leave, delay, colour
 """
 
 
