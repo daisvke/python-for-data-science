@@ -65,7 +65,7 @@ def ft_tqdm(
     terminal_width = terminal_size.columns
 
     total_len = len(iterable)
-	# Quit if iterable is empty
+    # Quit if iterable is empty
     if total_len == 0:
         print(f"\r0{unit} [00:00, ?{unit}/s]", end="")
 
@@ -86,7 +86,7 @@ def ft_tqdm(
 
         # Create time info
         total_time = elapsed_time / progress if progress > 0 else 0
-        remaining_time = total_time - elapsed_time 
+        remaining_time = total_time - elapsed_time
         minutes, seconds = divmod(int(remaining_time), 60)
         formatted_remaining_time = f"{minutes:02}:{seconds:02}"
 
@@ -95,19 +95,22 @@ def ft_tqdm(
         speed_info = f"{speed:.2f}{unit}/s"
 
         # Contacenate all time info
-        info_time = f" [{formatted_elapsed_time}<{formatted_remaining_time}, {speed_info}]"
+        info_time = (
+            f" [{formatted_elapsed_time}<"
+            f"{formatted_remaining_time}, {speed_info}]"
+        )
 
         # Concatenate all iteration info
         info_iteration = f"{i}/{total_len}"
 
         """
-		Some caracteristics from the original tqdm that we have copied:
-		 - The whole visual module has to occupy 100% of the terminal's width.
-		 - The width of the bar itself varies according to the info printed
-		  just afterwards:
+        Some caracteristics from the original tqdm that we have copied:
+         - The whole visual module has to occupy 100% of the terminal's width.
+         - The width of the bar itself varies according to the info printed
+          just afterwards:
            when the iteration value 'i' goes from 9 to 10 or from 99 to 100
-		   and gets an additional digit, the bar's width loses 1 char of width.
-		"""
+           and gets an additional digit, the bar's width loses 1 char of width.
+        """
         # Progression bar width: terminal width - infos around bar
         bar_len = terminal_width - 7 - len(info_time) - len(info_iteration)
 
@@ -117,11 +120,14 @@ def ft_tqdm(
         bar = f"{ansi_colour}█{reset_colour}" * filled_len + " " * empty_len
 
         if delay == 0 or (delay and elapsed_time > delay):
-        # The percentage number is right-aligned within a field of 3 spaces
-            print(f"\r{percentage:>3}%|{bar}| {info_iteration}{info_time}", end="")
+            # The percentage number is right-aligned within a field of 3 spaces
+            print(
+                f"\r{percentage:>3}%|{bar}| "
+                f"{info_iteration}{info_time}", end=""
+                )
 
         yield item
 
     # If leave is set to False, then we remove the bar before quitting
     if not leave:
-    	print("\r" + " " * terminal_width, end="\r")
+        print("\r" + " " * terminal_width, end="\r")

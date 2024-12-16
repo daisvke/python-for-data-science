@@ -25,6 +25,9 @@ pip show -v ft_package
 
 # Test the package
 python tester.py
+
+# Uninstall the package
+pip uninstall ft_package
 ```
 
 ## Notes

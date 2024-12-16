@@ -6,7 +6,7 @@ setup(
     description="A sample test package",
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-	url="https://github.com/eagle/ft_package",
+    url="https://github.com/eagle/ft_package",
     author="eagle",
     author_email="eagle@42.fr",
     license="MIT",

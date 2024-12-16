@@ -1,2 +1,1 @@
-ft-package @ file:///home/mint/Documents/python-for-data-science/ex09/dist/ft_package-0.0.1-py3-none-any.whl
 tqdm==4.67.1

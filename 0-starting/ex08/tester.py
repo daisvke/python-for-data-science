@@ -21,7 +21,7 @@ label_original = f"[{cyan}ORIGINAL{reset_colour}]"
 label_info = f"[{yellow}INFO{reset_colour}]"
 
 # Example with leave argument set to False
-print(f"{label_info} Example with leave argument set to False\n")
+print(f"{label_info} Example with 'leave' argument set to False\n")
 print(label_custom)
 for elem in ft_tqdm("", leave=False):
     sleep(0.005)
@@ -32,14 +32,14 @@ for elem in tqdm("", leave=False):
 
 print(separation_line)
 
-# Example with an empty iterator and 'elem' as unit and colours
-print(f"{label_info} Example with empty iterator + 'elem' as unit + colours\n")
+# Example with an empty iterator and 'elem' as unit
+print(f"{label_info} Example with empty iterator + 'elem' as unit\n")
 print(label_custom)
-for elem in ft_tqdm("", colour="yellow", unit="elem"):
+for elem in ft_tqdm("", unit="elem"):
     sleep(0.005)
 print()
 print(label_original)
-for elem in tqdm("", colour="cyan", unit="elem"):
+for elem in tqdm("", unit="elem"):
     sleep(0.005)
 
 print(separation_line)
@@ -55,14 +55,14 @@ for elem in tqdm(range(400), delay=.5):
     sleep(0.002)
 print()
 
-# Example with the same arguments
-print(f"{label_info} Example with the same arguments\n")
+# Example with green colour
+print(f"{label_info} Example with green colour\n")
 print(label_custom)
-for elem in ft_tqdm(range(333), colour="white"):
+for elem in ft_tqdm(range(333), colour="green"):
     sleep(0.005)
 print()
 print(label_original)
-for elem in tqdm(range(333), colour="white"):
+for elem in tqdm(range(333), colour="green"):
     sleep(0.005)
 print()
 
