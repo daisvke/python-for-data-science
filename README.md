@@ -12,6 +12,7 @@ The "Training Piscine Python for Data Science" is a structured program that intr
 * Exercise 04: Create a program that checks if a number is even or odd and handles errors for invalid inputs.
 * Exercise 05: Build a program that counts different types of characters (uppercase, lowercase, digits, etc.) in a given string.
 * Exercise 06: Implement a custom ft_filter function and create a program that filters words based on length, using list comprehensions and lambda functions.
+<img src="screenshots/ex06.png" />
 * Exercise 07: Convert a string into Morse code, handling space and alphanumeric characters with a dictionary lookup.
 * Exercise 08: Recreate the tqdm progress bar functionality using Python's yield operator.
 * Exercise 09: Create a Python package and make it installable via pip.
